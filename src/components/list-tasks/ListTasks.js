@@ -6,7 +6,7 @@ const ListTasks = ({ tasks, setTasks }) => {
     // <div className="card-group">
     <div className="tasks-parent" >
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <Task key={task.id} task={task} setTasks = {setTasks} tasks={tasks} />
         ))}
     </div>
   );

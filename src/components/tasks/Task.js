@@ -1,15 +1,32 @@
 import "./task.css";
-const Task = ({ task }) => {
+const Task = ({ tasks, task, setTasks }) => {
+
+  const handleDelete = ({ id }) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+    console.log("delete clicked");
+  };
+  const handleEdit = ({ id }) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+    console.log("delete clicked");
+  };
   return (
     <div className="card tasks-child" style={{ width: "18rem" }}>
       <div className="card-body">
         <h5 className="card-title">Task Name</h5>
         <h6 className="card-subtitle mb-2 text-muted">{task.title1}</h6>
         <p className="card-text">{task.title2}</p>
-        <a href="#" className="btn btn-primary btns-style">
+        <a
+          href="#"
+          className="btn btn-primary btns-style"
+          onClick={() => handleEdit(task)}
+        >
           Edit
         </a>
-        <a href="#" className="btn btn-primary btns-style">
+        <a
+          href="#"
+          className="btn btn-primary btns-style"
+          onClick={() => handleDelete(task)}
+        >
           Delete
         </a>
       </div>

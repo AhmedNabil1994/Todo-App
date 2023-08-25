@@ -26,12 +26,7 @@ function App() {
         tasks={tasks}
         setTasks={setTasks}
       />
-      <ListTasks tasks={tasks} setTasks={setTasks} />
-
-      
-      
-      
-      
+      <ListTasks tasks={tasks} setTasks={setTasks} />  
     </div>
   );
 }
