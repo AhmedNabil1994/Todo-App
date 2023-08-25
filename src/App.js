@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import AddTask from "./components/add-task-form/AddTask";
+import Task from "./components/tasks/Task";
+import { useState } from "react";
+import ListTasks from "./components/list-tasks/ListTasks";
+import Header from "./components/header/Header";
 function App() {
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  const [tasks, setTasks] = useState([]);
+  // console.log(tasks)
+  const handleSubmit = (data) => {
+    // setTasks(...tasks, data);
+    // console.log("submittedData", tasks);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <AddTask
+        name={name}
+        setName={setName}
+        desc={desc}
+        setDesc={setDesc}
+        tasks={tasks}
+        setTasks={setTasks}
+      />
+      <ListTasks tasks={tasks} setTasks={setTasks} />
+
+      
+      
+      
+      
     </div>
   );
 }

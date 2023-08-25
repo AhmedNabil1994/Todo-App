@@ -1,0 +1,11 @@
+.btns-style {
+  bottom: 5px;
+  padding: 2px;
+  /* margin: 0 auto; */
+}
+.tasks-child {
+  flex-basis: 25%;
+}
+.btns-style:last-of-type {
+  margin-left: 30px;
+}
